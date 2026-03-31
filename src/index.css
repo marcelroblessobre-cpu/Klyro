@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * { -webkit-tap-highlight-color: transparent; }
+  body { background: #111111; color: white; font-family: 'DM Sans', sans-serif; }
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: #111111; }
+  ::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+}
+
+@layer utilities {
+  .font-display { font-family: 'Bebas Neue', sans-serif; letter-spacing: 0.04em; }
+  .glass { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
+  .glow { box-shadow: 0 0 24px rgba(200, 241, 53, 0.25); }
+}
+
+/* Progress bar animation */
+.xp-bar-fill {
+  animation: barFill 1s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+@keyframes barFill {
+  from { width: 0% }
+  to { width: var(--target-width) }
+}
